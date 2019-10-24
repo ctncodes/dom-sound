@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+canvas {
+  display: inline-table;
+  border: 20px groove gold;
+  /* border: 25px groove #B22222; */
+  /* border: 25px groove #BDA58D; */
+}
