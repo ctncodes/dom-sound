@@ -1,254 +1,262 @@
-let sketch = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Leonardo_da_Vinci - Self-Portrait.jpg');
-    p.createCanvas(400, 400);
-    p.background(250, 235, 215);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'a') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp5 = new p5(sketch);
-let sketch2 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(255, 238, 195);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'b') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp6 = new p5(sketch2);
-let sketch3 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Mona Lisa.jpg');
-    p.createCanvas(400, 400);
-    p.background(250, 240, 205);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'c') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp7 = new p5(sketch3);
-let sketch4 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(236, 220, 207);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'd') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp8 = new p5(sketch4);
-let sketch5 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Leonardo - Parachute.jpg');
-    p.createCanvas(400, 400);
-    p.background(239, 222, 205);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'e') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp9 = new p5(sketch5);
-let sketch6 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(255, 250, 205);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'f') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp10 = new p5(sketch6);
-let sketch7 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Leonardo - Flywheel.jpg');
-    p.createCanvas(400, 400);
-    p.background(245, 222, 179);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'g') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp11 = new p5(sketch7);
-let sketch8 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(255, 229, 180);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'h') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp12 = new p5(sketch8);
-let sketch9 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Leonardo - Giant Crossbow.jpg');
-    p.createCanvas(400, 400);
-    p.background(250, 231, 181);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'i') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp13 = new p5(sketch9);
-let sketch10 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(255, 228, 196);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'j') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp14 = new p5(sketch10);
-let sketch11 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Flying Machine.jpg');
-    p.createCanvas(400, 400);
-    p.background(255, 235, 205);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'k') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp15 = new p5(sketch11);
-let sketch12 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(250, 240, 190);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'l') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp16 = new p5(sketch12);
-let sketch13 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Flying Machine 3.jpg');
-    p.createCanvas(400, 400);
-    p.background(255, 248, 220);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'm') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp17 = new p5(sketch13);
-let sketch14 = function(p) {
-  p.setup = function() {
-    p.createCanvas(400, 400);
-    p.background(255, 253, 208);
-    p.strokeWeight(5);
-  };
-  p.draw = function() {
-    if (p.mouseIsPressed) {
-      p.line(p.mouseX,p.mouseY,p.pmouseX,p.pmouseY);
-    }
-  };
-  p.keyTyped = function() {
-    if (p.key === 'n') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp18 = new p5(sketch14);
-let sketch15 = function(p) {
-  p.setup = function() {
-    p.square1 = p.loadImage('assets/Flying Machine 2.jpg');
-    p.createCanvas(400, 400);
-    p.background(255, 248, 231);
-  };
-  p.draw = function() {
-    p.background(p.square1);
-  };
-  p.keyTyped = function() {
-    if (p.key === 'o') {
-      p.saveCanvas('fileName', 'jpg');
-    }
-  };
-};
-let myp19 = new p5(sketch15);
+// let roster = [{
+//   firstName: "xiaowei",
+//   lastName: "zheng",
+//   color: " green",
+//   animal: "babies",
+//   book: "the little girl at the window",
+//   movie: "eat drink man woman",
+//   game: "none",
+//   superHero: "none",
+//   randomFact: "don't drink coke"
+// }, {
+//   firstName: "Andy",
+//   lastName: "Wu",
+//   color: "Red",
+//   animal: "Kiwi",
+//   book: "Romance of the Three Kingdoms",
+//   movie: "Shrek 2",
+//   game: "Super Mario 64",
+//   superHero: "Static Shock",
+//   randomFact: "I've had jaw correction surgery"
+// }, {
+//   firstName: "Chris",
+//   lastName: "Weber",
+//   color: "green",
+//   animal: "cat",
+//   book: "Hitchhiker's Guide to the Galaxy",
+//   movie: "Spiderman Into The Spiderverse",
+//   game: "The Legend of Zelda Breath of the Wild",
+//   superHero: "Iron Man",
+//   randomFact: "I'm vegetarian"
+// }, {
+//   firstName: "Sumedh",
+//   lastName: "Vedanthi",
+//   color: "Blue",
+//   animal: "Crow",
+//   book: "Of Mice and Men",
+//   movie: "American Psycho",
+//   game: "Fruit Ninja",
+//   superHero: "Batman",
+//   randomFact: "im a black belt"
+// }, {
+//   firstname: "Kaicong",
+//   lastname: "Tang",
+//   color: "black",
+//   animal: "dog",
+//   movie: "iron man123",
+//   game: "csgo",
+//   superHero: "iron man",
+//   randomFact: "love gaming"
+// }, {
+//   firstName: "Hao",
+//   lastName: "Rong",
+//   color: "hex(#4285F4)/Bright blue",
+//   animal: "otter",
+//   book: "A Brief History of Time",
+//   movie: "Angry Birds 2",
+//   game: "Final Fantasy XIV",
+//   superHero: "Tony Stark",
+//   randomFact: "I like cats."
+// }, {
+//   firstName: "Sierra",
+//   lastName: "Roe",
+//   color: "purple",
+//   animal: "dog",
+//   book: "phantom tollbooth",
+//   movie: "Naussica of the Valley of the Wind",
+//   game: "pokemon heartgold",
+//   superHero: "captain marvel",
+//   randomFact: "can run 7 minute mile"
+// }, {
+//   firstName: "Leon",
+//   lastName: "Quach",
+//   color: "silver",
+//   animal: "penguins",
+//   book: "Letters to a Young Poet",
+//   movie: "Kung fu Hustle",
+//   game: "Pokemon Crystal Version",
+//   superHero: "Batman",
+//   randomFact: "I have two pet guinea pigs"
+// }, {
+//   firstName: "Chi",
+//   lastName: "Nguyen",
+//   color: "purple",
+//   animal: "bird",
+//   book: "Math Curse",
+//   movie: "Big Hero 6",
+//   game: "Checkers",
+//   superHero: "Big Hero 6 (team)",
+//   randomFact: "Lately this year, monsters have especially been occupying my mind, among other things."
+// }, {
+//   firstName: "Lydia",
+//   lastName: "Lim",
+//   color: "blue",
+//   animal: "dog",
+//   book: "No",
+//   movie: "me before you",
+//   game: "No",
+//   superHero: "Thor",
+//   randomFact: " birds are tetrapods even though they only walk on two legs"
+// }, {
+//   firstName: "Matteo",
+//   lastName: "Leva",
+//   color: "Black",
+//   animal: "Cat",
+//   book: "Pillars of the earth",
+//   movie: "The Godfather",
+//   game: "Witcher 3",
+//   superHero: "spider man",
+//   randomFact: "I'm disappointed in GOT season 8"
+// }, {
+//   firstName: "Camila",
+//   lastName: "Avina Garcia",
+//   color: "Green",
+//   animal: "Dog",
+//   book: "Match",
+//   movie: "Lady and the Tramp",
+//   game: " Guitar Hero",
+//   superHero: "Spiderman",
+//   randomFact: "I have a twin"
+// }, {
+//   firstName: "Eddson",
+//   lastName: "Jose",
+//   color: "midnight blue",
+//   animal: "pig",
+//   book: "The Dark Forest",
+//   movie: "The Fountain",
+//   game: "Halo Reach",
+//   superHero: "Superman",
+//   randomFact: "I am made up of stardust"
+// }, {
+//   firstName: "Hector",
+//   lastName: "Flores",
+//   color: "Blue",
+//   animal: "Dog",
+//   book: "Captain Underpants",
+//   movie: "Ace Ventura pet detective",
+//   game: "Smash Brothers",
+//   superHero: "Flash",
+//   randomFact: "I am a Libra"
+// }, {
+//   firstName: "Zainib",
+//   lastName: "Ahmed",
+//   color: "Blue",
+//   animal: "Giraffe",
+//   book: "The Book Thief",
+//   movie: "Amelie",
+//   game: "none",
+//   superHero: "The Hulk",
+//   randomFact: "I love to eat olives."
+// }, {
+//   firstName: "Toni",
+//   lastName: "Anguiano",
+//   color: "blue",
+//   animal: "cat",
+//   book: "The Bell Jar",
+//   movie: "Horror",
+//   game: "???",
+//   superHero: "batman",
+//   randomFact: "I like to hangout in cemeteries and research dark California history"
+// }, {
+//   firstName: "Vanessa",
+//   lastName: "Blacow-Berggen",
+//   color: "pink",
+//   animal: "cat",
+//   book: "The Heartstriker series",
+//   movie: "Cats Don't Dance",
+//   game: "Spyro Reignited Trilogy",
+//   superHero: "Spiderman",
+//   randomFact: "I really like cats, especially my cat"
+// }, {
+//   firstName: "Kevin",
+//   lastName: "Sagara",
+//   color: "yellow",
+//   animal: "cat",
+//   book: "sherlock holmes",
+//   movie: "Shaun of the Dead",
+//   game: "osu!",
+//   superHero: "batman",
+//   randomFact: "learning japanese"
+// }, {
+//   firstName: "Anthony",
+//   lastName: "Valdovinos",
+//   color: "purple",
+//   animal: "eagle",
+//   book: "Hatchet",
+//   movie: "Titanic",
+//   game: "Starfox Adventures",
+//   superHero: "none",
+//   randomFact: "I studied Japanese for 4 years"
+// }, {
+//   firstName: "Rachel",
+//   lastName: "Centinaje",
+//   color: "green",
+//   animal: "dogs",
+//   book: "none",
+//   movie: "Drive",
+//   game: "Dishonored",
+//   superHero: "Deadpool",
+//   randomFact: "I went camping this weekend"
+// }, {
+//   firstName: "Alicia",
+//   lastName: "Breinke",
+//   color: "purple",
+//   animal: "dog",
+//   book: "The Art of Racing in the Rain",
+//   movie: "Spirited Away",
+//   game: "???",
+//   superHero: "Wonder Woman",
+//   randomFact: "I want to live in another country someday"
+// }, {
+//   firstName: "asra",
+//   lastName: "siddiqui",
+//   color: "idk",
+//   animal: "chameleons",
+//   book: "codex 1962",
+//   movie: "pulp fiction",
+//   game: "idk",
+//   superHero: "hate em all",
+//   randomFact: "im grumpy"
+// }];
+// let roster = [];
+// let randomIndex;
+// let animating = false;
+// let theMagicHour = [];
+// let presto = 0;
+// let peopleButton;
+// let chapterButton;
+let pieceOfPaper;
+let checkList = [];
+let size = 
+// let premiere = true;
+
+// function preload() {
+//   for (let i = 0; i <= 15; i++) {
+//     theMagicHour[i] = loadImage(`assets/Harry Houdini ${i}.PNG`);
+//   }
+// }
+
+function setup() {
+  pieceOfPaper = createCanvas(windowWidth, windowHeight);
+  pieceOfPaper.parent("#canvasDiv");
+  background(0);
+  for (let i = 0; i < 100; i++) {
+    checkList[i] = createCheckbox('check?');
+    checkList[i].style('display','inline');
+    checkList[i].position(random(windowWidth),random(windowHeight));
+    checkList[i].changed(myCheckedEvent);
+  }
+}
+
+function draw() {
+  // if (animating == true) {
+  //   clear();
+  //   image(theMagicHour[presto], windowWidth / 2, windowHeight / 2);
+  //   if (presto < theMagicHour.length - 1) {
+  //     presto++;
+  //     console.log(presto);
+  //   } else {
+  //     presto = 0;
+  //   }
+  // }
+}

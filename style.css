@@ -1,11 +1,23 @@
 html, body {
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 canvas {
-  display: inline-table;
-  border: 20px groove gold;
-  /* border: 25px groove #B22222; */
-  /* border: 25px groove #BDA58D; */
+  display: block;
 }
+.storyTime {
+  padding: 1px;
+  background-color: #E4A5D1;
+}
+.storyBookCharacters {
+  padding: 1px;
+  background-color: #662d91;
+}
+#characterNames {
+  position: absolute;
+  bottom: 0px;
+}
+/* #characterNames2 {
+  position: absolute;
+  bottom: 22px;
+} */
