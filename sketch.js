@@ -230,9 +230,9 @@ let putNameHere = [];
 let premiere = true;
 
 function preload() {
-  for (let i = 0; i <= 17; i++) {
-    theClassics[i] = loadImage(`assets/Cars_${i}.jpg`);
-  }
+  // for (let i = 0; i <= 17; i++) {
+  //   theClassics[i] = loadImage(`assets/Cars_${i}.jpg`);
+  // }
   soundFormats('mp3');
   sparkles = loadSound('assets/Little Einsteins - The Harp!.mp3');
 }
