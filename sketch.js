@@ -230,51 +230,50 @@ let putNameHere = [];
 let premiere = true;
 
 function preload() {
-  // for (let i = 0; i <= 17; i++) {
-  //   theClassics[i] = loadImage(`assets/Cars_${i}.jpg`);
-  // }
+  for (let i = 0; i <= 17; i++) {
+    theClassics[i] = loadImage(`assets/Cars_${i}.jpg`);
+  }
   soundFormats('mp3');
   sparkles = loadSound('assets/Little Einsteins - The Harp!.mp3');
 }
 
 function setup() {
-  noCanvas();
-  // pieceOfPaper = createCanvas(windowWidth, windowHeight);
-  // pieceOfPaper.parent("#canvasDiv");
-  // background("#858FFF");
-  // strokeWeight(10);
-  // line(windowWidth / 8, 68, windowWidth / 8, windowHeight - 68);
-  // line(windowWidth / 4, 34, windowWidth / 4, windowHeight - 34);
-  // line(windowWidth * 3 / 8, 68, windowWidth * 3 / 8, windowHeight - 68);
-  // line(windowWidth / 2, 34, windowWidth / 2, windowHeight - 34);
-  // line(windowWidth * 5 / 8, 68, windowWidth * 5 / 8, windowHeight - 68);
-  // line(windowWidth * 3 / 4, 34, windowWidth * 3 / 4, windowHeight - 34);
-  // line(windowWidth * 7 / 8, 68, windowWidth * 7 / 8, windowHeight - 68);
-  // stroke("#ffd700");
-  // textSize(180);
-  // fill('#662d91');
-  // imageMode(CENTER);
-  // frameRate(8);
-  //
-  // // text("Enjoy Harold &", 25, 325);
-  // text("Harold & Chi's", 25, 325);
-  // // text("Chi's Fairy Tale.", 25, 525);
-  // text("Bedtime Story.", 25, 525);
-  //
-  // // button = createButton("Turn the page.");
-  // chapterButton = select("#bedTimeStory");
-  // chapterButton.mousePressed(buttonPressed);
-  // // chapterButton.parent("#characterNames2");
-  // chapterButton.position(windowWidth / 2, windowHeight - (2*chapterButton.height));
-  // peopleButton = select("#theProtagonists");
-  // peopleButton.mousePressed(theMoreTheMerrier);
-  // // peopleButton.parent("#characterNames2");
-  // peopleButton.position(windowWidth / 2 - peopleButton.width, windowHeight - (2*peopleButton.height));
-  // for (let i = 0; i <= 2; i++) {
-  //   putNameHere.push(createInput("Add character here."));
-  //   putNameHere[putNameHere.length - 1].parent("#characterNames");
-  //   // putNameHere[putNameHere.length - 1].position(peopleButton.width*i, windowHeight - peopleButton.height);
-  // }
+  pieceOfPaper = createCanvas(windowWidth, windowHeight);
+  pieceOfPaper.parent("#canvasDiv");
+  background("#858FFF");
+  strokeWeight(10);
+  line(windowWidth / 8, 68, windowWidth / 8, windowHeight - 68);
+  line(windowWidth / 4, 34, windowWidth / 4, windowHeight - 34);
+  line(windowWidth * 3 / 8, 68, windowWidth * 3 / 8, windowHeight - 68);
+  line(windowWidth / 2, 34, windowWidth / 2, windowHeight - 34);
+  line(windowWidth * 5 / 8, 68, windowWidth * 5 / 8, windowHeight - 68);
+  line(windowWidth * 3 / 4, 34, windowWidth * 3 / 4, windowHeight - 34);
+  line(windowWidth * 7 / 8, 68, windowWidth * 7 / 8, windowHeight - 68);
+  stroke("#ffd700");
+  textSize(180);
+  fill('#662d91');
+  imageMode(CENTER);
+  frameRate(8);
+
+  // text("Enjoy Harold &", 25, 325);
+  text("Harold & Chi's", 25, 325);
+  // text("Chi's Fairy Tale.", 25, 525);
+  text("Bedtime Story.", 25, 525);
+
+  // button = createButton("Turn the page.");
+  chapterButton = select("#bedTimeStory");
+  chapterButton.mousePressed(buttonPressed);
+  // chapterButton.parent("#characterNames2");
+  chapterButton.position(windowWidth / 2, windowHeight - (2*chapterButton.height));
+  peopleButton = select("#theProtagonists");
+  peopleButton.mousePressed(theMoreTheMerrier);
+  // peopleButton.parent("#characterNames2");
+  peopleButton.position(windowWidth / 2 - peopleButton.width, windowHeight - (2*peopleButton.height));
+  for (let i = 0; i <= 2; i++) {
+    putNameHere.push(createInput("Add character here."));
+    putNameHere[putNameHere.length - 1].parent("#characterNames");
+    // putNameHere[putNameHere.length - 1].position(peopleButton.width*i, windowHeight - peopleButton.height);
+  }
 }
 
 function draw() {
