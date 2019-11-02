@@ -15,5 +15,5 @@ function draw() {
 }
 
 function vanishingAct() {
-  
+  escapeArtist.show();
 }
