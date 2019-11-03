@@ -6,7 +6,7 @@ let themeSong;
 function preload() {
   soundFormats('mp3');
   poofingSound = loadSound("assets/Magical Chime Descend.mp3");
-  themeSong = loadSound("assets/Toy Story You've Got a Friend in Me (StrideRagtime Piano).mp3");
+  themeSong = loadSound("assets/Kingdom Hearts 3 OST - Toy Box Theme");
 }
 
 function setup() {
