@@ -2,6 +2,17 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 canvas {
   display: block;
+}
+
+button {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.content {
+  max-width: 600px;
+  margin: 50px auto;
 }
