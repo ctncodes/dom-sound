@@ -5,8 +5,8 @@ let reverb;
 
 function preload() {
   soundFormats('mp3');
-  poofingSound = loadSound("assets/Magical Chime Descend.mp3");
-  themeSong = loadSound("assets/Kingdom Hearts 3 OST - Toy Box Theme");
+  poofingSound = loadSound("assets/Fragile!.mp3");
+  themeSong = loadSound("assets/Ballistic Italian.mp3");
 }
 
 function setup() {
@@ -32,7 +32,7 @@ function draw() {
 }
 
 function vanishingAct() {
-  poofingSound.setVolume(0.1);
+  poofingSound.setVolume(2);
   poofingSound.play();
   setTimeout(function() {
     escapeArtist.show();
