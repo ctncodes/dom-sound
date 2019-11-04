@@ -1,6 +1,7 @@
 let abracadabra, boomBox, notSoFast;
 let escapeArtist;
 let poofingSound, themeSong;
+let reverb;
 
 function preload() {
   soundFormats('mp3');
@@ -11,13 +12,18 @@ function preload() {
 function setup() {
   noCanvas();
 
+  reverb = new p5.Reverb();
+
   abracadabra = select("#whatsTheMagicWord");
   boomBox = select("#downBeat");
   notSoFast = select("#slowMo");
   escapeArtist = select("#Magician");
 
   abracadabra.mousePressed(vanishingAct);
-  boomBox.mousePressed(function() {});
+  boomBox.mousePressed(function() {
+    themeSong.setVolume(.1, 2);
+    reverb.process(soundFile, 3, 2);
+  });
   notSoFast.mousePressed(function() {});
 }
 
@@ -30,7 +36,7 @@ function vanishingAct() {
   poofingSound.play();
   setTimeout(function() {
     escapeArtist.show();
-    themeSong.setVolume(0.5);
+    themeSong.setVolume(1);
     themeSong.loop();
   }, 500);
 }
