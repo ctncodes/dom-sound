@@ -6,7 +6,7 @@ let reverb;
 function preload() {
   soundFormats('mp3');
   poofingSound = loadSound("assets/Fragile!.mp3");
-  themeSong = loadSound("assets/Ballistic Italian.mp3");
+  themeSong = loadSound("assets/Italian Complaint.mp3");
 }
 
 function setup() {
@@ -37,6 +37,6 @@ function vanishingAct() {
   setTimeout(function() {
     escapeArtist.show();
     themeSong.setVolume(1);
-    themeSong.loop();
-  }, 500);
+    themeSong.play();
+  }, 1060);
 }
