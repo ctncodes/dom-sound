@@ -1,11 +1,31 @@
 'use strict';
-let cnv, volume, osc, theWave, popMusic, disneyPixarMagic;
-let ars, arte, artista, artiste, artist;
-let presto, boomBox, notSoFast, reverb, delay;
-let solo, duo, trio, quartet, quintet;
+let cnv;
+let volume;
+let osc;
+let img;
+let theWave;
+let popMusic;
+let disneyPixarMagic;
+let ars;
+let arte;
+let artista;
+let artiste;
+let artist;
+let presto
+let boomBox;
+let notSoFast;
+let reverb;
+let delay;
+let solo
+let duo;
+let trio;
+let quartet;
+let quintet;
+let fft, sound, filter;
 
 function preload() {
   soundFormats('mp3');
+  img = loadImage('assets/one-man-band-disneyscreencaps.com-452.jpg');
   disneyPixarMagic = loadSound("assets/Pixar Logo.mp3");
   solo = loadSound("assets/Kingdom Hearts 3 OST - Toy Box Theme.mp3");
   // solo = loadSound("assets/One Man Band - Bass 1.mp3");
@@ -19,10 +39,10 @@ function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
   volume = new p5.Amplitude();
   cnv.mouseClicked(function() {
-    if (sound.isPlaying()) {
-      sound.stop();
+    if (duo.isPlaying()) {
+      duo.stop();
     } else {
-      sound.play();
+      duo.play();
     }
   });
 
@@ -61,6 +81,14 @@ function setup() {
   notSoFast.mousePressed(function() {
     delay.process(solo, .12, .7, 2300);
   });
+
+  fill(255, 40, 255);
+  filter = new p5.BandPass();
+  sound = new p5.Noise();
+  sound.disconnect();
+  sound.connect(filter);
+  sound.start();
+  fft = new p5.FFT();
 }
 
 function draw() {
@@ -68,6 +96,24 @@ function draw() {
   osc.freq(map(mouseX, 0, width, 60, 1200) + popMusic);
   osc.amp(map(mouseY, 0, height, .2, 0));
   // osc.amp(map(sin(frameCount/20), -1, 1, 0, .2));
+
+  background(img);
+  fill(random(255),random(255),random(255));
+  let level = volume.getLevel();
+  let size = map(level, 0, 1, 0, 2000);
+  ellipse(width/2, height/2, size, size);
+
+  let freq = map(mouseX, 0, width, 20, 10000);
+  filter.freq(freq);
+  filter.res(50);
+  let spectrum = fft.analyze();
+  noStroke();
+  for (let i = 0; i < spectrum.length; i++) {
+    let x = map(i, 0, spectrum.length, 0, width);
+    let h = -height + map(spectrum[i], 0, 255, height, 0);
+    rect(x, height, width/spectrum.length, h);
+  }
+  isMouseOverCanvas();
 }
 
 function mousePressed() {
@@ -126,4 +172,13 @@ function pixarShortFilms5() {
     quintet.setVolume(1);
     quintet.loop();
   }, 14000);
+}
+
+function isMouseOverCanvas() {
+  let mX = mouseX, mY = mouseY;
+  if (mX > 0 && mX < width && mY < height && mY > 0) {
+    sound.amp(0.5, 0.2);
+  } else {
+    sound.amp(0, 0.2);
+  }
 }
