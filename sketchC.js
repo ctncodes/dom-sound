@@ -1,5 +1,5 @@
 'use strict';
-let osc, theWave, popMusic, disneyPixarMagic;
+let cnv, volume, osc, theWave, popMusic, disneyPixarMagic;
 let ars, arte, artista, artiste, artist;
 let presto, boomBox, notSoFast, reverb, delay;
 let solo, duo, trio, quartet, quintet;
@@ -9,14 +9,23 @@ function preload() {
   disneyPixarMagic = loadSound("assets/Pixar Logo.mp3");
   solo = loadSound("assets/Kingdom Hearts 3 OST - Toy Box Theme.mp3");
   // solo = loadSound("assets/One Man Band - Bass 1.mp3");
-  // duo = loadSound("assets/One Man Band - Bass 2.mp3");
+  duo = loadSound("assets/Zigeunerweisen by Pablo de Sarasate.mp3");
   // trio = loadSound("assets/One Man Band - Treble 1 (ft. Bass).mp3");
   // quartet = loadSound("assets/One Man Band - Treble & Bass.mp3");
   // quintet = loadSound("assets/One Man Band - Tippy.mp3");
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  cnv = createCanvas(windowWidth, windowHeight);
+  volume = new p5.Amplitude();
+  cnv.mouseClicked(function() {
+    if (sound.isPlaying()) {
+      sound.stop();
+    } else {
+      sound.play();
+    }
+  });
+
   osc = new p5.Oscillator('square');
   createSpan('Select Waveform: ');
   theWave = createSelect();
@@ -34,7 +43,7 @@ function setup() {
   presto = select("#aFullLengthFeatureFilm");
   boomBox = select("#downBeat");
   notSoFast = select("#slowMo");
-  artist = select("#Magician");
+  artist = select("#toyStory");
   // artiste = select("#Magician");
   // artista = select("#Magician");
   // arte = select("#Magician");
