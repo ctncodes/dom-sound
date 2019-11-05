@@ -1,9 +1,7 @@
 'use strict';
-let osc, theWave, popMusic;
+let osc, theWave, popMusic, disneyPixarMagic;
 let ars, arte, artista, artiste, artist;
-let presto, boomBox, notSoFast;
-let reverb, delay;
-let disneyPixarMagic;
+let presto, boomBox, notSoFast, reverb, delay;
 let solo, duo, trio, quartet, quintet;
 
 function preload() {
