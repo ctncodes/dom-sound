@@ -3,12 +3,16 @@ let osc, theWave, popMusic, artist;
 let presto, boomBox, notSoFast;
 let reverb, delay;
 let disneyPixarMagic;
-let solo;
+let solo, duo, trio, quartet, quintet;
 
 function preload() {
   soundFormats('mp3');
   disneyPixarMagic = loadSound("assets/Pixar Logo.mp3");
-  solo = loadSound("assets/Toy Story You've Got a Friend in Me (StrideRagtime Piano).mp3");
+  solo = loadSound("assets/One Man Band - Bass 1.mp3");
+  // duo = loadSound("assets/One Man Band - Bass 2.mp3");
+  // trio = loadSound("assets/One Man Band - Treble 1 (ft. Bass).mp3");
+  // quartet = loadSound("assets/One Man Band - Treble & Bass.mp3");
+  // quintet = loadSound("assets/One Man Band - Tippy.mp3");
 }
 
 function setup() {
@@ -27,12 +31,16 @@ function setup() {
   reverb = new p5.Reverb();
   delay = new p5.Delay();
 
-  presto = select("#whatsTheMagicWord");
+  presto = select("#aFullLengthFeatureFilm");
   boomBox = select("#downBeat");
   notSoFast = select("#slowMo");
   artist = select("#Magician");
 
-  presto.mousePressed(backGroundMusic);
+  presto.mousePressed(toyStory1);
+  // presto.mousePressed(theIncredibles2);
+  // presto.mousePressed(cars3);
+  // presto.mousePressed(coco4);
+  // presto.mousePressed(pixarShortFilms5);
   boomBox.mousePressed(function() {
     solo.setVolume(.1, 2);
     reverb.process(solo, 3, 2);
@@ -57,12 +65,52 @@ function mouseReleased() {
   osc.stop();
 }
 
-function backGroundMusic() {
+function toyStory1() {
   disneyPixarMagic.setVolume(2);
   disneyPixarMagic.play();
   setTimeout(function() {
     artist.show();
     solo.setVolume(1);
     solo.loop();
+  }, 14000);
+}
+
+function theIncredibles2() {
+  disneyPixarMagic.setVolume(2);
+  disneyPixarMagic.play();
+  setTimeout(function() {
+    artist.show();
+    duo.setVolume(1);
+    duo.loop();
+  }, 14000);
+}
+
+function cars3() {
+  disneyPixarMagic.setVolume(2);
+  disneyPixarMagic.play();
+  setTimeout(function() {
+    artist.show();
+    trio.setVolume(1);
+    trio.loop();
+  }, 14000);
+}
+
+function coco4() {
+  disneyPixarMagic.setVolume(2);
+  disneyPixarMagic.play();
+  setTimeout(function() {
+    artist.show();
+    quartet.setVolume(1);
+    quartet.loop();
+  }, 14000);
+}
+
+function pixarShortFilms5() {
+  disneyPixarMagic.setVolume(2);
+  disneyPixarMagic.play();
+  setTimeout(function() {
+    artist.show();
+    quintet.setVolume(1);
+    quintet.loop();
   }, 14000);
 }
