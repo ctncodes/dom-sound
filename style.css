@@ -19,9 +19,11 @@ button {
 
 .waltDisneyPictures {
   padding: 1px;
-  background-color: #043C9B;
+  /* background-color: #043C9B; */
+  background-color: #3651C5;
 }
 .pixarAnimationStudios {
   padding: 1px;
-  background-color: #5CA4CC;
+  /* background-color: #5CA4CC; */
+  background-color: #99C0E6;
 }
