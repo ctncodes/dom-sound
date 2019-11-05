@@ -101,7 +101,7 @@ function draw() {
   fill(random(255),random(255),random(255));
   let level = volume.getLevel();
   let size = map(level, 0, 1, 0, 2000);
-  ellipse(random(width), random(height), size, size);
+  ellipse(width/2, height/2, size, size);
 
   let freq = map(mouseX, 0, width, 20, 10000);
   filter.freq(freq);
