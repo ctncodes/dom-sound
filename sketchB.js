@@ -19,8 +19,8 @@ function setup() {
 function draw() {
   popMusic = noise(frameCount/20) * 100;
   osc.freq(map(mouseX, 0, width, 60, 1200) + popMusic);
-  // osc.amp(map(mouseY, 0, height, .2, 0));
-  osc.amp(map(sin(frameCount/20), -1, 1, 0, .2));
+  osc.amp(map(mouseY, 0, height, .2, 0));
+  // osc.amp(map(sin(frameCount/20), -1, 1, 0, .2));
 }
 
 function selectWave() {

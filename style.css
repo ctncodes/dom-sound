@@ -16,3 +16,12 @@ button {
   max-width: 600px;
   margin: 50px auto;
 }
+
+.waltDisneyPictures {
+  padding: 1px;
+  background-color: #173998;
+}
+.pixarAnimationStudios {
+  padding: 1px;
+  background-color: #3476DB;
+}
