@@ -3,12 +3,12 @@ let osc, theWave, popMusic, artist;
 let presto, boomBox, notSoFast;
 let reverb, delay;
 let disneyPixarMagic;
-let toyStory;
+let solo;
 
 function preload() {
   soundFormats('mp3');
-  disneyPixarMagic = loadSound("assets/DisneyPixar Animation Studios (2013) (1080p HD).mp3");
-  toyStory = loadSound("assets/Toy Story You've Got a Friend in Me (StrideRagtime Piano).mp3");
+  disneyPixarMagic = loadSound("assets/Pixar Logo.mp3");
+  solo = loadSound("assets/Toy Story You've Got a Friend in Me (StrideRagtime Piano).mp3");
 }
 
 function setup() {
@@ -32,13 +32,13 @@ function setup() {
   notSoFast = select("#slowMo");
   artist = select("#Magician");
 
-  presto.mousePressed(vanishingAct);
+  presto.mousePressed(backGroundMusic);
   boomBox.mousePressed(function() {
-    toyStory.setVolume(.1, 2);
-    reverb.process(toyStory, 3, 2);
+    solo.setVolume(.1, 2);
+    reverb.process(solo, 3, 2);
   });
   notSoFast.mousePressed(function() {
-    delay.process(toyStory, .12, .7, 2300);
+    delay.process(solo, .12, .7, 2300);
   });
 }
 
@@ -57,12 +57,12 @@ function mouseReleased() {
   osc.stop();
 }
 
-function vanishingAct() {
+function backGroundMusic() {
   disneyPixarMagic.setVolume(2);
   disneyPixarMagic.play();
   setTimeout(function() {
     artist.show();
-    toyStory.setVolume(1);
-    toyStory.loop();
-  }, 44000);
+    solo.setVolume(1);
+    solo.loop();
+  }, 14000);
 }
