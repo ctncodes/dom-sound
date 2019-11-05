@@ -13,7 +13,9 @@ function setup() {
   theWave.option('sine');
   theWave.option('square');
   theWave.option('triangle');
-  theWave.changed(selectWave);
+  theWave.changed(function() {
+    osc.setType(theWave.value());
+  });
 }
 
 function draw() {
@@ -21,10 +23,6 @@ function draw() {
   osc.freq(map(mouseX, 0, width, 60, 1200) + popMusic);
   osc.amp(map(mouseY, 0, height, .2, 0));
   // osc.amp(map(sin(frameCount/20), -1, 1, 0, .2));
-}
-
-function selectWave() {
-  osc.setType(theWave.value());
 }
 
 function mousePressed() {
