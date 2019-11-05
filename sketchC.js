@@ -34,7 +34,7 @@ function setup() {
   presto = select("#aFullLengthFeatureFilm");
   boomBox = select("#downBeat");
   notSoFast = select("#slowMo");
-  // artist = select("#Magician");
+  artist = select("#Magician");
   // artiste = select("#Magician");
   // artista = select("#Magician");
   // arte = select("#Magician");
