@@ -1,16 +1,14 @@
 'use strict';
-let osc;
-let theWave;
-let popMusic;
+let osc, theWave, popMusic, artist;
 let presto, boomBox, notSoFast;
-let artist;
-let poofingSound, themeSong;
 let reverb, delay;
+let disneyPixarMagic;
+let toyStory;
 
 function preload() {
   soundFormats('mp3');
-  poofingSound = loadSound("assets/Fragile!.mp3");
-  themeSong = loadSound("assets/Italian Complaint.mp3");
+  disneyPixarMagic = loadSound("assets/DisneyPixar Animation Studios (2013) (1080p HD).mp3");
+  toyStory = loadSound("assets/Toy Story You've Got a Friend in Me (StrideRagtime Piano).mp3");
 }
 
 function setup() {
@@ -36,11 +34,11 @@ function setup() {
 
   presto.mousePressed(vanishingAct);
   boomBox.mousePressed(function() {
-    themeSong.setVolume(.1, 2);
-    reverb.process(themeSong, 3, 2);
+    toyStory.setVolume(.1, 2);
+    reverb.process(toyStory, 3, 2);
   });
   notSoFast.mousePressed(function() {
-    delay.process(themeSong, .12, .7, 2300);
+    delay.process(toyStory, .12, .7, 2300);
   });
 }
 
@@ -60,11 +58,11 @@ function mouseReleased() {
 }
 
 function vanishingAct() {
-  poofingSound.setVolume(2);
-  poofingSound.play();
+  disneyPixarMagic.setVolume(2);
+  disneyPixarMagic.play();
   setTimeout(function() {
     artist.show();
-    themeSong.setVolume(1);
-    themeSong.loop();
-  }, 500);
+    toyStory.setVolume(1);
+    toyStory.loop();
+  }, 44000);
 }

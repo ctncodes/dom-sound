@@ -14,7 +14,7 @@ button {
 
 .content {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 
 .waltDisneyPictures {
@@ -26,4 +26,9 @@ button {
   padding: 1px;
   /* background-color: #5CA4CC; */
   background-color: #99C0E6;
+}
+.aDisneyPixarFilm {
+  padding: 1px;
+  /* background-color: #5CA4CC; */
+  background-color: #6888d5;
 }
