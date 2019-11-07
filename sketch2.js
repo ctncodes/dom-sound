@@ -4,8 +4,13 @@
 
 // Q: Can you add code that asks you to center face in screen?
 
-var capture, tracker;
-// var w = windowWidth, h = windowHeight;
+let capture, tracker;
+// let w = windowWidth, h = windowHeight;
+
+function preload() {
+  soundFormats('mp3');
+  threeRingCircus = loadSound("assets/Three Ring Government.mp3");
+}
 
 function setup() {
     capture = createCapture({
@@ -31,30 +36,38 @@ function setup() {
 
 function draw() {
     image(capture, 0, 0, windowWidth, windowHeight);
-    var positions = tracker.getCurrentPosition();
+    let outLine = tracker.getCurrentPosition();
+
+    // if (mouseIsPressed == true) {
+    //   threeRingCircus.setVolume(0.5);
+    //   threeRingCircus.play();
+    // } else if (mouseIsPressed == false) {
+    //   threeRingCircus.stop();
+    // }
 
     // draws the outine
     // noFill();
     fill(255);
     stroke(255);
     beginShape();
-    for (var i = 0; i < positions.length; i++) {
-        vertex(positions[i][0], positions[i][1]);
+    for (let i = 0; i < outLine.length; i++) {
+        vertex(outLine[i][0], outLine[i][1]);
     }
     endShape();
 
     noStroke();
-    for (var i = 0; i < positions.length; i++) {
-        fill(map(i, 0, positions.length, 0, 360), 50, 100);
-        ellipse(positions[i][0], positions[i][1], 4, 4);
-        // text(i, positions[i][0], positions[i][1]);
+    for (let i = 0; i < outLine.length; i++) {
+        fill("#2a52be");
+        // fill(map(i, 0, outLine.length, 0, 360), 50, 100);
+        ellipse(outLine[i][0], outLine[i][1], 4, 4);
+        // text(i, outLine[i][0], outLine[i][1]);
     }
 
   // estimate smiling amount through distance of corners of mouth
-    if (positions.length > 0) {
-        var mouthLeft = createVector(positions[44][0], positions[44][1]);
-        var mouthRight = createVector(positions[50][0], positions[50][1]);
-        var smile = mouthLeft.dist(mouthRight);
+    if (outLine.length > 0) {
+        let mouthLeft = createVector(outLine[44][0], outLine[44][1]);
+        let mouthRight = createVector(outLine[50][0], outLine[50][1]);
+        let smile = mouthLeft.dist(mouthRight);
 
         // line shows a bar showing smiling amount
         rect(20, 20, smile * 3, 20);
@@ -62,6 +75,15 @@ function draw() {
         // uncomment for a surprise
         noStroke();
         fill(0, 255, 255);
-        ellipse(positions[62][0], positions[62][1], 100, 100);
+        ellipse(outLine[62][0], outLine[62][1], 100, 100);
     }
+}
+
+function keyTyped() {
+  if (key === 'a') {
+    threeRingCircus.setVolume(0.5);
+    threeRingCircus.play();
+  } else if (key === 'z') {
+    threeRingCircus.stop();
+  }
 }
