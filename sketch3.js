@@ -1,20 +1,8 @@
-let hocusPocus;
-let smokeAndMirrors;
+let video;
 
 function setup() {
-  noCanvas();
-
-  hocusPocus = select('#whatsTheMagicWord');
-  smokeAndMirrors = select('#Magician');
-  // smokeAndMirrors.hide();
-
-  hocusPocus.mousePressed(vanishingAct);
-}
-
-function draw() {
-  background(220);
-}
-
-function vanishingAct() {
-  smokeAndMirrors.show();
+  canvas = createCanvas(480, 360);
+  background(51);
+  video = createCapture(VIDEO);
+  video.size(480, 360);
 }
