@@ -120,7 +120,7 @@ function draw() {
 
     // control frequency and volume with mouse
     // audible range of frequency is 20-2000hz
-    osc.freq(map(outLine, 50, 90, 20, 2000));
+    osc.freq(map(smile, 50, 90, 20, 2000));
     // console.log(outLine);
 
     // uncomment for a surprise
