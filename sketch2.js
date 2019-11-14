@@ -23,7 +23,7 @@ function preload() {
 function setup() {
   osc = new p5.Oscillator('square');
   // osc.setType();
-  selection = createSpan('Select Waveform: ');
+  // selection = createSpan('Select Waveform: ');
   // selection.parent("#unpredictable");
   // theWave = createSelect();
   // theWave.option('sawtooth');
