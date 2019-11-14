@@ -16,19 +16,3 @@ button {
   max-width: 900px;
   margin: 0px auto;
 }
-
-.waltDisneyPictures {
-  padding: 1px;
-  /* background-color: #043C9B; */
-  background-color: #3651C5;
-}
-.pixarAnimationStudios {
-  padding: 1px;
-  /* background-color: #5CA4CC; */
-  background-color: #99C0E6;
-}
-.aDisneyPixarFilm {
-  padding: 1px;
-  /* background-color: #5CA4CC; */
-  background-color: #6888d5;
-}
