@@ -6,9 +6,11 @@
 
 let capture;
 let tracker;
-let w = windowWidth,
-    h = windowHeight;
-let threeRingCircus, volume, cnv;
+// let w = windowWidth;
+// let h = windowHeight;
+let threeRingCircus;
+let volume;
+let cnv;
 
 function preload() {
   soundFormats('mp3');
@@ -30,14 +32,14 @@ function setup() {
   capture.size(windowWidth, windowHeight);
   capture.hide();
 
-  volume = new p5.Amplitude();
-  cnv.mouseClicked(function() {
-    if (threeRingCircus.isPlaying()) {
-      threeRingCircus.stop();
-    } else {
-      threeRingCircus.play();
-    }
-  });
+  // volume = new p5.Amplitude();
+  // cnv.mouseClicked(function() {
+  //   if (threeRingCircus.isPlaying()) {
+  //     threeRingCircus.stop();
+  //   } else {
+  //     threeRingCircus.play();
+  //   }
+  // });
   colorMode(HSB);
 
   tracker = new clm.tracker();
@@ -56,15 +58,27 @@ function draw() {
   //   threeRingCircus.stop();
   // }
 
-  fill(random(255),random(255),random(255));
-  let level = volume.getLevel();
-  let size = map(level, 0, 1, 0, 2000);
-  ellipse(random(width), random(height), size, size);
+  // fill(random(255),random(255),random(255));
+  // let level = volume.getLevel();
+  // let size = map(level, 0, 1, 0, 2000);
+  // ellipse(random(width), random(height), size, size);
 
   // draws the outine
   // noFill();
+  // if (outLine<width/3) {
+  //   // for Whiteface Clown
+  //   fill(255);
+  // } else if (outLine>width*2/3) {
+  //   // for Character Clown
+  //   fill("FCDBBC");
+  // } else  {
+  //   fill(255,147,44);
+  //   // for Auguste Clown
+  //   fill("#FDD895");
+  // }
   fill(255);
   stroke(255);
+  // noStroke();
   beginShape();
   for (let i = 0; i < outLine.length; i++) {
     vertex(outLine[i][0], outLine[i][1]);
