@@ -22,18 +22,18 @@ function preload() {
 
 function setup() {
   osc = new p5.Oscillator('square');
-  // osc.setType();
-  // selection = createSpan('Select Waveform: ');
-  // selection.parent("#unpredictable");
-  // theWave = createSelect();
-  // theWave.option('sawtooth');
-  // theWave.option('sine');
-  // theWave.option('square');
-  // theWave.option('triangle');
-  // theWave.changed(function() {
-  //   osc.setType(theWave.value());
-  // });
-  // theWave.parent("#unpredictable");
+  osc.setType();
+  selection = createSpan('Select Waveform: ');
+  selection.parent("#unpredictable");
+  theWave = createSelect();
+  theWave.option('sawtooth');
+  theWave.option('sine');
+  theWave.option('square');
+  theWave.option('triangle');
+  theWave.changed(function() {
+    osc.setType(theWave.value());
+  });
+  theWave.parent("#unpredictable");
   capture = createCapture({
     audio: false,
     video: {
