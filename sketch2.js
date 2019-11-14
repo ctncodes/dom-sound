@@ -4,8 +4,10 @@
 
 // Q: Can you add code that asks you to center face in screen?
 
-let capture, tracker;
-// let w = windowWidth, h = windowHeight;
+let capture;
+let tracker;
+let w = windowWidth,
+    h = windowHeight;
 let threeRingCircus, volume, cnv;
 
 function preload() {
