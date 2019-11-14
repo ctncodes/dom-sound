@@ -11,6 +11,9 @@ let tracker;
 let threeRingCircus;
 let volume;
 let cnv;
+let faceCentered = false;
+let osc;
+let selection;
 
 function preload() {
   soundFormats('mp3');
@@ -18,6 +21,19 @@ function preload() {
 }
 
 function setup() {
+  osc = new p5.Oscillator('square');
+  // osc.setType();
+  selection = createSpan('Select Waveform: ');
+  selection.parent("#unpredictable");
+  theWave = createSelect();
+  theWave.option('sawtooth');
+  theWave.option('sine');
+  theWave.option('square');
+  theWave.option('triangle');
+  theWave.changed(function() {
+    osc.setType(theWave.value());
+  });
+  theWave.parent("#unpredictable");
   capture = createCapture({
     audio: false,
     video: {
@@ -101,11 +117,26 @@ function draw() {
 
     // line shows a bar showing smiling amount
     rect(20, 20, smile * 3, 20);
-    //
+
+    // control frequency and volume with mouse
+    // audible range of frequency is 20-2000hz
+    osc.freq(map(smile, 50, 90, 20, 2000));
+    // console.log(outLine);
+
     // uncomment for a surprise
     noStroke();
     fill(0, 255, 255);
     ellipse(outLine[62][0], outLine[62][1], 100, 100);
+  }
+
+  for (var i = 0; i < outLine.length; i++) {
+    if (outLine[i][0] > 100 && outLine[i][0] < windowWidth - 100 && outLine[i][1] > 100 && outLine[i][1] < windowHeight - 100) {
+      faceCentered = true;
+    } else {
+      faceCentered = false;
+      // breaks out of for loop and faceCentered stays false
+      break;
+    }
   }
 }
 
@@ -117,3 +148,11 @@ function draw() {
 //     threeRingCircus.stop();
 //   }
 // }
+
+function mousePressed() {
+  osc.start();
+}
+
+function mouseReleased() {
+  osc.stop();
+}
